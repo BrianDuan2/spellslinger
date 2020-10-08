@@ -8,6 +8,11 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
 
     public float jumps = 2;
+    void Start()
+    {
+        
+
+    }
     // Update is called once per frame
     void Update()
     {
@@ -20,11 +25,7 @@ public class PlayerController : MonoBehaviour
         {
             this.transform.Translate(Vector2.left * speed * Time.deltaTime);
         }
-        /*if (Input.GetKey(KeyCode.S))
-        {
-            this.transform.Translate(Vector2.down * speed * Time.deltaTime);
-        }*/
-
+        
         if (Input.GetKeyDown(KeyCode.Space) && jumps > 0)
         {
             this.GetComponent<Rigidbody2D>().velocity = new Vector2(0,0);
