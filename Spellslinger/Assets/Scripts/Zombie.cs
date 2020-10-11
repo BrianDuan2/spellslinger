@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Zombie : MonoBehaviour
+public class Zombie : Enemy
 {
-    public int health = 100;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+       health = 100; 
     }
 
     // Update is called once per frame
@@ -17,17 +17,7 @@ public class Zombie : MonoBehaviour
     {
         
     }
-    public void TakeDamage (int damage)
-    {
-        health -= damage;
-        if (health <=0)
-        {
-            Die();
-        }
-    }
+    
 
-    void Die()
-    {
-        Destroy(gameObject);
-    }
+    
 }
