@@ -10,6 +10,7 @@ public class Zombie : Enemy
     void Start()
     {
        health = 100; 
+       maxHealth = 100;
     }
 
     // Update is called once per frame

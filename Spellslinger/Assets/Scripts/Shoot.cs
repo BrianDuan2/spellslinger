@@ -5,6 +5,11 @@ using UnityEngine;
 public class Shoot : MonoBehaviour
 {
     public GameObject firePrefab;
+    public PlayerController player;
+    public int lightningDmg = 20;
+
+    //placeholder for lightning effect  
+    public LineRenderer lineRenderer;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +21,40 @@ public class Shoot : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Fire();
+            //Fire();
+            StartCoroutine(Lightning());
         }
     }
-    void Fire()
-    {
+    void Fire(){
         Instantiate(firePrefab, transform.position, transform.rotation);
+    }
+    IEnumerator Lightning()
+    {
+        
+
+        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.right);
+
+        if(hitInfo)
+        {
+           Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
+           if (enemy != null)
+           {
+               enemy.TakeDamage(lightningDmg);
+           }
+
+           lineRenderer.SetPosition(0, transform.position);
+           lineRenderer.SetPosition(1, hitInfo.point);
+
+        }else
+        {
+             lineRenderer.SetPosition(0,transform.position);
+             lineRenderer.SetPosition(1, transform.position + transform.right * 100);
+        }
+
+        lineRenderer.enabled = true;
+        //waits one second
+        yield return new WaitForSeconds(0.02f);
+
+        lineRenderer.enabled = false;
     }
 }

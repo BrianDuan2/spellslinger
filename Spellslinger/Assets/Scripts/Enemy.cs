@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public int health;
+    public int maxHealth;
     // Start is called before the first frame update
    
 
@@ -16,6 +17,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage (int damage)
     {
         health -= damage;
+        Debug.Log("health is at" + health);
         if (health <=0)
         {
             Die();
