@@ -9,13 +9,11 @@ public class Enemy : MonoBehaviour
     //public float speed = 1f;
     public HealthBar healthBar;
     public float moveSpeed = 3f;
-    Transform leftwayPoint, rightwayPoint;
-    Vector3 localScale;
+    public Transform leftwayPoint, rightwayPoint;
     bool movingRight = true;
     Rigidbody2D rb;
 
     public float leftMax, rightMax;
-    float walkingDirection = 1.0f;
     float originalX;
     // Start is called before the first frame update
 
@@ -23,7 +21,6 @@ public class Enemy : MonoBehaviour
     {
        healthBar.SetMaxHealth(maxHealth);
        // originalX = transform.position.x;
-       localScale = transform.localScale;
        rb = GetComponent<Rigidbody2D>();
        leftwayPoint = GameObject.Find("LeftWayPoint").GetComponent<Transform> ();
        rightwayPoint = GameObject.Find("RightWayPoint").GetComponent<Transform> ();
@@ -62,18 +59,14 @@ public class Enemy : MonoBehaviour
     void moveRight()
     {
         movingRight = true;
-        localScale.x = 1;
-        transform.localScale = localScale;
-        rb.velocity = new Vector2 (localScale.x * moveSpeed, rb.velocity.y);
+        rb.velocity = new Vector2 (moveSpeed, rb.velocity.y);
 
     }
 
     void moveLeft()
     {
         movingRight = false;
-        localScale.x = -1;
-        transform.localScale = localScale;
-        rb.velocity = new Vector2 (localScale.x * moveSpeed, rb.velocity.y);
+        rb.velocity = new Vector2 (-moveSpeed, rb.velocity.y);
 
     }
 

@@ -19,7 +19,7 @@ public class HealthBar : MonoBehaviour
 
     public void SetPosition(Vector3 pos)
     {
-        transform.position = (pos + Offset);
+        transform.position = Camera.main.WorldToScreenPoint(transform.parent.position + Offset);
     }
    
 }
