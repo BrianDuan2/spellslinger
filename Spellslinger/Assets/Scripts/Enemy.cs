@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public int health;
     public int maxHealth;
     //public float speed = 1f;
-
+    public HealthBar healthBar;
     public float moveSpeed = 3f;
     Transform leftwayPoint, rightwayPoint;
     Vector3 localScale;
@@ -21,6 +21,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
+       healthBar.SetMaxHealth(maxHealth);
        // originalX = transform.position.x;
        localScale = transform.localScale;
        rb = GetComponent<Rigidbody2D>();
@@ -80,6 +81,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamage (int damage)
     {
         health -= damage;
+        healthBar.SetHealth(health);
         Debug.Log("health is at" + health);
         if (health <=0)
         {
