@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthBar : MonoBehaviour
 {   
     public Slider slider;
-    public Vector3 Offset;
+    public Vector3 Offset = new Vector3(0,2,0);
      public void SetMaxHealth(int health)
     {
         slider.maxValue = health;
@@ -19,7 +19,7 @@ public class HealthBar : MonoBehaviour
 
     public void SetPosition(Vector3 pos)
     {
-        slider.transform.position = (pos + Offset);
+        transform.position = (pos + Offset);
     }
    
 }

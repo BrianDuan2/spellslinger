@@ -55,6 +55,8 @@ public class Enemy : MonoBehaviour
             moveRight();
         else
             moveLeft();
+
+        healthBar.SetPosition(transform.position);
     }
 
     void moveRight()
