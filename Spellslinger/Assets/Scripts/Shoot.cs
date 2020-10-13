@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shoot : MonoBehaviour
 {
+    private int equip = 1;
     public GameObject firePrefab;
     public PlayerController player;
     public int lightningDmg = 20;
@@ -19,10 +20,26 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKey(KeyCode.Alpha1))
+        {
+            equip = 1;
+        }
+        if (Input.GetKey(KeyCode.Alpha2))
+        {
+            equip = 2;
+        }
+
+        //need to change so player can reorganize spells later
         if (Input.GetButtonDown("Fire1"))
         {
-            //Fire();
-            StartCoroutine(Lightning());
+            if (equip == 1)
+            {
+                Fire(); 
+            }
+            if (equip == 2)
+            {
+                StartCoroutine(Lightning());
+            }
         }
     }
     void Fire(){
