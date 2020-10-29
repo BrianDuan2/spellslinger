@@ -10,10 +10,15 @@ public class Shoot : MonoBehaviour
     public Rigidbody2D rb;
     public int lightningDmg = 20;
 
-    public SpriteRenderer sRender;
+  
 
     //placeholder for lightning effect  
     public LineRenderer lineRenderer;
+    //wind spell
+    public SpriteRenderer sRender;
+    public Transform aimTransform;
+    private Vector3 aimDirection;
+    private Vector3 mousePos;
     void Update()
     {
         if (Input.GetKey(KeyCode.Alpha1))
@@ -84,10 +89,31 @@ public class Shoot : MonoBehaviour
 
     void Wind(){
         sRender.enabled = true;
-        rb.AddForce(new Vector2(0,0.2f),ForceMode2D.Impulse);
+        mousePos = GetMouseWorldPosition();
+        aimDirection = (mousePos - transform.position).normalized;
+        float angle = Mathf.Atan2(aimDirection.y,aimDirection.x)* Mathf.Rad2Deg;
+        Vector2 propelForce = new Vector2(-0.2f,0);
+        propelForce = Rotate(propelForce, angle);
+        rb.AddForce(propelForce,ForceMode2D.Impulse);
     }
 
     void DespawnWind(){
         sRender.enabled = false;
+    }
+
+    public static Vector3 GetMouseWorldPosition(){
+        Vector3 worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        worldPosition.z = 0f;
+        return worldPosition;
+    }
+    public static Vector2 Rotate(Vector2 v, float degrees) {
+        float sin = Mathf.Sin(degrees * Mathf.Deg2Rad);
+        float cos = Mathf.Cos(degrees * Mathf.Deg2Rad);
+        
+        float tx = v.x;
+        float ty = v.y;
+        v.x = (cos * tx) - (sin * ty);
+        v.y = (sin * tx) + (cos * ty);
+        return v;
     }
 }

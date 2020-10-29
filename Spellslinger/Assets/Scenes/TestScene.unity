@@ -616,6 +616,12 @@ Rigidbody2D:
     type: 3}
   m_PrefabInstance: {fileID: 5767257775502619183}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1170550586 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5767257774366154010, guid: 07884013d9f8aaa4090b521c3e58381b,
+    type: 3}
+  m_PrefabInstance: {fileID: 5767257775502619183}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1358106126
 GameObject:
   m_ObjectHideFlags: 0
@@ -1795,5 +1801,10 @@ PrefabInstance:
       propertyPath: rb
       value: 
       objectReference: {fileID: 1170550584}
+    - target: {fileID: 5767257775000348331, guid: 07884013d9f8aaa4090b521c3e58381b,
+        type: 3}
+      propertyPath: aimTransform
+      value: 
+      objectReference: {fileID: 1170550586}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07884013d9f8aaa4090b521c3e58381b, type: 3}
