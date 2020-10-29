@@ -7,17 +7,13 @@ public class Shoot : MonoBehaviour
     private int equip = 1;
     public GameObject firePrefab;
     public PlayerController player;
+    public Rigidbody2D rb;
     public int lightningDmg = 20;
+
+    public SpriteRenderer sRender;
 
     //placeholder for lightning effect  
     public LineRenderer lineRenderer;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey(KeyCode.Alpha1))
@@ -29,26 +25,37 @@ public class Shoot : MonoBehaviour
             equip = 2;
         }
 
+        if (Input.GetKey(KeyCode.Alpha3))
+        {
+            equip = 3;
+        }
+
         //need to change so player can reorganize spells later
         if (Input.GetButtonDown("Fire1"))
         {
-            if (equip == 1)
-            {
+            if (equip == 1){
                 Fire(); 
             }
-            if (equip == 2)
-            {
+            if (equip == 2) {
                 StartCoroutine(Lightning());
             }
+        }
+
+        if (Input.GetButton("Fire1")){
+            if (equip == 3){
+                Wind();
+            }
+        }
+
+        if (Input.GetButtonUp("Fire1")){
+            DespawnWind();
         }
     }
     void Fire(){
         Instantiate(firePrefab, transform.position, transform.rotation);
     }
-    IEnumerator Lightning()
-    {
-        
 
+    IEnumerator Lightning(){
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.right);
 
         if(hitInfo)
@@ -73,5 +80,14 @@ public class Shoot : MonoBehaviour
         yield return new WaitForSeconds(0.02f);
 
         lineRenderer.enabled = false;
+    }
+
+    void Wind(){
+        sRender.enabled = true;
+        rb.AddForce(new Vector2(0,0.2f),ForceMode2D.Impulse);
+    }
+
+    void DespawnWind(){
+        sRender.enabled = false;
     }
 }
