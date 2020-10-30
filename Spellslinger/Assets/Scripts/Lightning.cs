@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Lightning : MonoBehaviour
-{
+{   
+    private float t = 0;
     public SpriteRenderer sRender;
     // Start is called before the first frame update
     void Start()
@@ -17,11 +18,15 @@ public class Lightning : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D other) {
+    void OnTriggerStay2D(Collider2D other) {
         if (sRender.enabled == true){
             if (other.gameObject.CompareTag("Enemy")){
                 //need to change
-                other.gameObject.GetComponent<Enemy>().TakeDamage(1);
+                t+=Time.deltaTime;
+                if (t>0.1f){
+                    t = 0.0f;
+                    other.gameObject.GetComponent<Enemy>().TakeDamage(2);
+                }
             }
         }
     }
