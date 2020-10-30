@@ -8,6 +8,7 @@ public class Shoot : MonoBehaviour
     public GameObject firePrefab;
     public PlayerController player;
     public Rigidbody2D rb;
+    public BoxCollider2D lightningHitBox;
     public int lightningDmg = 20;
 
   
@@ -16,6 +17,7 @@ public class Shoot : MonoBehaviour
     public LineRenderer lineRenderer;
     //wind spell
     public SpriteRenderer sRender;
+    public SpriteRenderer lngRender;
     public Transform aimTransform;
     private Vector3 aimDirection;
     private Vector3 mousePos;
@@ -41,25 +43,27 @@ public class Shoot : MonoBehaviour
             if (equip == 1){
                 Fire(); 
             }
-            if (equip == 2) {
-                StartCoroutine(Lightning());
-            }
+            
         }
 
         if (Input.GetButton("Fire1")){
+            if (equip == 2) {
+                //StartCoroutine(Lightning());
+                Lightning();
+            }
             if (equip == 3){
                 Wind();
             }
         }
 
         if (Input.GetButtonUp("Fire1")){
-            DespawnWind();
+            DespawnSprites();
         }
     }
     void Fire(){
         Instantiate(firePrefab, transform.position, transform.rotation);
     }
-
+    /*
     IEnumerator Lightning(){
         RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.right);
 
@@ -85,6 +89,10 @@ public class Shoot : MonoBehaviour
         yield return new WaitForSeconds(0.02f);
 
         lineRenderer.enabled = false;
+    }*/
+
+    void Lightning(){
+        lngRender.enabled = true;
     }
 
     void Wind(){
@@ -97,8 +105,9 @@ public class Shoot : MonoBehaviour
         rb.AddForce(propelForce,ForceMode2D.Impulse);
     }
 
-    void DespawnWind(){
+    void DespawnSprites(){
         sRender.enabled = false;
+        lngRender.enabled = false;
     }
 
     public static Vector3 GetMouseWorldPosition(){
