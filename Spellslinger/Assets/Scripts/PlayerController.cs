@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public HealthBar healthBar;
     public float jumps = 2;
+    public int damage = 10;
     void Start()
     {
         healthBar.SetMaxHealth(maxHealth);
@@ -34,5 +35,30 @@ public class PlayerController : MonoBehaviour
             this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0,jumpForce),ForceMode2D.Impulse);
             jumps--;
         }
+    }
+
+    void OnCollisionEnter2D (Collision2D other)
+    {
+        if (other.gameObject.tag.Equals("Enemy"))
+        {
+            TakeDamage(damage);
+
+        }
+
+    }
+
+     public void TakeDamage (int damage)
+    {
+        health -= damage;
+        healthBar.SetHealth(health);
+        Debug.Log("health is at" + health);
+        if (health <=0)
+        {
+            Die();
+        }
+    }
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }
