@@ -6,8 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     static public int health = 100;
     static public int maxHealth = 100;
-    static public int mana = 50;
-    static public int maxMana = 50;
+    static public int mana = 100;
+    static public int maxMana = 100;
     public float speed = 0;
     public float jumpForce;
     public HealthBar healthBar;
@@ -24,9 +24,10 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         t += Time.deltaTime;
-        if (t>=0.1f){
+        if (t>=0.2f){
             if (mana < maxMana)
                 mana++;
+                manaBar.SetHealth(mana);
             t = 0.0f;
         }
         if (Input.GetKey(KeyCode.D))
@@ -59,6 +60,16 @@ public class PlayerController : MonoBehaviour
         {
             Die();
         }
+    }
+    public bool checkMana(int cost){
+        if (mana >= cost){
+            return true;
+        }
+        return false;
+    }
+    public void useMana(int cost){
+        mana -= cost;
+        manaBar.SetHealth(mana);
     }
     void Die()
     {

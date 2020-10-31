@@ -9,7 +9,9 @@ public class Shoot : MonoBehaviour
     public PlayerController player;
     public Rigidbody2D rb;
     public BoxCollider2D lightningHitBox;
-    public int lightningDmg = 20;
+
+    private float t = 0;
+
 
   
 
@@ -41,26 +43,50 @@ public class Shoot : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             if (equip == 1){
-                Fire(); 
+                if (player.checkMana(20))
+                    Fire(); 
             }
             
         }
 
         if (Input.GetButton("Fire1")){
             if (equip == 2) {
-                //StartCoroutine(Lightning());
-                Lightning();
+                t += Time.deltaTime;
+                if (t >= 0.1f){
+                    player.useMana(2);
+                    t = 0.0f;
+                }
+                if (player.checkMana(2)){
+                    Lightning();
+                }else{
+                    DespawnSprites();
+                    t = 0.0f;
+                }
+
+                
             }
             if (equip == 3){
-                Wind();
+                t += Time.deltaTime;
+                if (t >= 0.1f){
+                    player.useMana(1);
+                    t = 0.0f;
+                }
+                if (player.checkMana(1)){
+                    Wind();
+                }else{
+                    DespawnSprites();
+                    t = 0.0f;
+                }
             }
         }
 
         if (Input.GetButtonUp("Fire1")){
             DespawnSprites();
+            t = 0.0f;
         }
     }
     void Fire(){
+        player.useMana(10);
         Instantiate(firePrefab, transform.position, transform.rotation);
     }
     /*
