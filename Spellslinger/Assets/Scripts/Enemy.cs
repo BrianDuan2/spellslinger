@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
 {
     public int health;
     public int maxHealth;
+    public int damage = 10;
     //public float speed = 1f;
     public HealthBar healthBar;
     public float moveSpeed = 3f;
@@ -27,6 +28,11 @@ public class Enemy : MonoBehaviour
        healthBar.SetMaxHealth(maxHealth);
     }
 
+    protected void OnCollisionEnter2D(Collision2D other) {
+        if (other.gameObject.CompareTag("Player")){
+            other.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
+        }
+    }
     // Update is called once per frame
     void Update()
     {

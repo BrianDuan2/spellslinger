@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public int health =100;
-    public int maxHealth = 100;
+    static public int health = 100;
+    static public int maxHealth = 100;
+    static public int mana = 50;
+    static public int maxMana = 50;
     public float speed = 0;
     public float jumpForce;
     public HealthBar healthBar;
@@ -37,20 +39,13 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter2D (Collision2D other)
-    {
-        if (other.gameObject.tag.Equals("Enemy"))
-        {
-            TakeDamage(damage);
-
-        }
-
-    }
+    
 
      public void TakeDamage (int damage)
     {
         health -= damage;
         healthBar.SetHealth(health);
+        Debug.Log("dmg = " + damage);
         Debug.Log("health is at" + health);
         if (health <=0)
         {
