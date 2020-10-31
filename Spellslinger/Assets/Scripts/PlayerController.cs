@@ -15,10 +15,16 @@ public class PlayerController : MonoBehaviour
     public float jumps = 2;
     public int damage = 10;
     private float t = 0;
+    private Animator anim;
+
+
+
+
     void Start()
     {
         healthBar.SetMaxHealth(maxHealth);
         manaBar.SetMaxHealth(maxMana);
+        anim = GetComponent<Animator>();
     }
     // Update is called once per frame
     void Update()
@@ -33,11 +39,18 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             this.transform.Translate(Vector2.right * speed * Time.deltaTime);
+            anim.SetBool("isWalking", true);
         }
+            else{
+            anim.SetBool("isWalking", false);
+            }
+
+        
 
         if (Input.GetKey(KeyCode.A))
         {
             this.transform.Translate(Vector2.left * speed * Time.deltaTime);
+            anim.SetBool("isWalking", true);
         }
         
         if (Input.GetKeyDown(KeyCode.Space) && jumps > 0)
