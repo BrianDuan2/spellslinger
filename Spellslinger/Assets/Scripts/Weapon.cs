@@ -5,6 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour
 {
     public Transform FirePoint;
+    public PlayerController player;
     private Transform aimTransform;
     private Vector3 aimDirection;
     private Vector3 mousePos;
@@ -20,6 +21,9 @@ public class Weapon : MonoBehaviour
         mousePos = GetMouseWorldPosition();
         aimDirection = (mousePos - transform.position).normalized;
         float angle = Mathf.Atan2(aimDirection.y,aimDirection.x)* Mathf.Rad2Deg;
+        if (player.checkFlip() ==false){
+            angle += 180;
+        }
         aimTransform.eulerAngles = new Vector3(0,0,angle);
         
     }

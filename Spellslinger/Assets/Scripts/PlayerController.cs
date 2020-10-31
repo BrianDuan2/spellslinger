@@ -110,4 +110,8 @@ public class PlayerController : MonoBehaviour
 
 
     }
+
+    public bool checkFlip(){
+        return facingRight;
+    }
 }

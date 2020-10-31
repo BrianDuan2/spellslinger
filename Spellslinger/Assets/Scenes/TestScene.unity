@@ -438,12 +438,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 9, y: 0.6}
   m_EdgeRadius: 0
---- !u!212 &1226804288 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 1423381405, guid: 07884013d9f8aaa4090b521c3e58381b,
-    type: 3}
-  m_PrefabInstance: {fileID: 5767257775502619183}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1294905076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,19 +1930,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5767257775000348331, guid: 07884013d9f8aaa4090b521c3e58381b,
         type: 3}
-      propertyPath: lngRender
-      value: 
-      objectReference: {fileID: 1226804288}
-    - target: {fileID: 5767257775000348331, guid: 07884013d9f8aaa4090b521c3e58381b,
-        type: 3}
       propertyPath: lrb
       value: 
       objectReference: {fileID: 1226804287}
-    - target: {fileID: 5767257775000348331, guid: 07884013d9f8aaa4090b521c3e58381b,
+    - target: {fileID: 5767257775000348332, guid: 07884013d9f8aaa4090b521c3e58381b,
         type: 3}
-      propertyPath: icePrefab
+      propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 4762360140999712835, guid: b1c91d4a276ed274f80d267710d8d2da,
+      objectReference: {fileID: -8824553709156082757, guid: 4d2363b73bd74d448a1f5d99abce6715,
         type: 3}
+    - target: {fileID: 5767257775000348332, guid: 07884013d9f8aaa4090b521c3e58381b,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07884013d9f8aaa4090b521c3e58381b, type: 3}

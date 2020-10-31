@@ -554,12 +554,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f63b20766ac2ab445bd6f3647576f6fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  maxHealth: 100
   speed: 6
   jumpForce: 18
   healthBar: {fileID: 0}
+  manaBar: {fileID: 0}
   jumps: 2
+  damage: 10
 --- !u!114 &5767257774366154005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -573,6 +573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 5767257773938793593}
+  player: {fileID: 5767257774366154009}
 --- !u!1 &5767257775000348334
 GameObject:
   m_ObjectHideFlags: 0
@@ -672,11 +673,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePrefab: {fileID: 6910017378296733886, guid: c37f3b2eb5126334b9c8824dbcc3a835,
     type: 3}
+  icePrefab: {fileID: 4762360140999712835, guid: b1c91d4a276ed274f80d267710d8d2da,
+    type: 3}
   player: {fileID: 5767257774366154009}
   rb: {fileID: 5767257774366154007}
   lightningHitBox: {fileID: 0}
-  lightningDmg: 20
   lineRenderer: {fileID: 5767257773897341059}
   sRender: {fileID: 454722778}
-  lngRender: {fileID: 0}
+  lngRender: {fileID: 1423381405}
   aimTransform: {fileID: 5767257774366154010}

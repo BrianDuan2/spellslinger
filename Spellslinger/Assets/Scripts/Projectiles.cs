@@ -7,6 +7,7 @@ public class Projectiles : MonoBehaviour
     public float speed = 20f;
     public int damage = 20;
     public Rigidbody2D rb;
+    private float t;
 
     // Start is called before the first frame update
     void Start()
@@ -14,12 +15,16 @@ public class Projectiles : MonoBehaviour
        // Vector3 aim = GetMouseWorldPosition();
        // rb.velocity = aim.normalized * speed;
        rb.velocity = transform.right * speed;
+       t = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        t += Time.deltaTime;
+        if (t >= 3.0f){
+            Destroy(gameObject);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other)

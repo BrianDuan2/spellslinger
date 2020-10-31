@@ -101,12 +101,20 @@ public class Shoot : MonoBehaviour
     }
     void Fire(){
         player.useMana(10);
-        Instantiate(firePrefab, transform.position, transform.rotation);
+        if (player.checkFlip()){
+            Instantiate(firePrefab, transform.position, transform.rotation);
+        }else{
+            Instantiate(firePrefab, transform.position, aimTransform.rotation);
+        }
     }
 
     void Ice(){
         player.useMana(10);
-        Instantiate(icePrefab, transform.position, transform.rotation);
+         if (player.checkFlip()){
+            Instantiate(icePrefab, transform.position, transform.rotation);
+        }else{
+            Instantiate(icePrefab, transform.position, aimTransform.rotation);
+        }
     }
     /*
     IEnumerator Lightning(){
