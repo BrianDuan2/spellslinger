@@ -1900,5 +1900,11 @@ PrefabInstance:
       propertyPath: lrb
       value: 
       objectReference: {fileID: 1226804287}
+    - target: {fileID: 5767257775000348331, guid: 07884013d9f8aaa4090b521c3e58381b,
+        type: 3}
+      propertyPath: icePrefab
+      value: 
+      objectReference: {fileID: 4762360140999712835, guid: b1c91d4a276ed274f80d267710d8d2da,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 07884013d9f8aaa4090b521c3e58381b, type: 3}

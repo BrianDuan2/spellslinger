@@ -6,6 +6,7 @@ public class Shoot : MonoBehaviour
 {
     private int equip = 1;
     public GameObject firePrefab;
+    public GameObject icePrefab;
     public PlayerController player;
     public Rigidbody2D rb;
     public BoxCollider2D lightningHitBox;
@@ -38,6 +39,10 @@ public class Shoot : MonoBehaviour
         {
             equip = 3;
         }
+         if (Input.GetKey(KeyCode.Alpha4))
+        {
+            equip = 4;
+        }
 
         //need to change so player can reorganize spells later
         if (Input.GetButtonDown("Fire1"))
@@ -45,6 +50,15 @@ public class Shoot : MonoBehaviour
             if (equip == 1){
                 if (player.checkMana(20))
                     Fire(); 
+            }
+            
+        }
+
+        if (Input.GetButtonDown("Fire1"))
+        {
+            if (equip == 4){
+                if (player.checkMana(20))
+                    Ice(); 
             }
             
         }
@@ -88,6 +102,11 @@ public class Shoot : MonoBehaviour
     void Fire(){
         player.useMana(10);
         Instantiate(firePrefab, transform.position, transform.rotation);
+    }
+
+    void Ice(){
+        player.useMana(10);
+        Instantiate(icePrefab, transform.position, transform.rotation);
     }
     /*
     IEnumerator Lightning(){
