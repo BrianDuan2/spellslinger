@@ -11,16 +11,24 @@ public class PlayerController : MonoBehaviour
     public float speed = 0;
     public float jumpForce;
     public HealthBar healthBar;
+    public HealthBar manaBar;
     public float jumps = 2;
     public int damage = 10;
+    private float t = 0;
     void Start()
     {
         healthBar.SetMaxHealth(maxHealth);
-
+        manaBar.SetMaxHealth(maxMana);
     }
     // Update is called once per frame
     void Update()
     {
+        t += Time.deltaTime;
+        if (t>=0.1f){
+            if (mana < maxMana)
+                mana++;
+            t = 0.0f;
+        }
         if (Input.GetKey(KeyCode.D))
         {
             this.transform.Translate(Vector2.right * speed * Time.deltaTime);
