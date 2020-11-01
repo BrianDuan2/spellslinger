@@ -104,7 +104,9 @@ public class Shoot : MonoBehaviour
         if (player.checkFlip()){
             Instantiate(firePrefab, transform.position, transform.rotation);
         }else{
-            Instantiate(firePrefab, transform.position, aimTransform.rotation);
+            Vector3 rot = transform.rotation.eulerAngles;
+            rot = new Vector3(rot.x,rot.y,rot.z+180);
+            Instantiate(firePrefab, transform.position, Quaternion.Euler(rot));
         }
     }
 
@@ -113,7 +115,9 @@ public class Shoot : MonoBehaviour
          if (player.checkFlip()){
             Instantiate(icePrefab, transform.position, transform.rotation);
         }else{
-            Instantiate(icePrefab, transform.position, aimTransform.rotation);
+            Vector3 rot = transform.rotation.eulerAngles;
+            rot = new Vector3(rot.x,rot.y,rot.z+180);
+            Instantiate(icePrefab, transform.position, Quaternion.Euler(rot));
         }
     }
     /*

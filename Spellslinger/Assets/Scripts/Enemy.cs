@@ -7,25 +7,20 @@ public class Enemy : MonoBehaviour
     public int health;
     public int maxHealth;
     public int damage = 10;
-    //public float speed = 1f;
     public HealthBar healthBar;
     public float moveSpeed = 3f;
     public Transform leftwayPoint, rightwayPoint;
     protected bool movingRight = true;
     protected Rigidbody2D rb;
-
-    public float leftMax, rightMax;
-    float originalX;
     // Start is called before the first frame update
 
     protected void Start()
     {
        // originalX = transform.position.x;
        rb = GetComponent<Rigidbody2D>();
-       leftwayPoint = GameObject.Find("LeftWayPoint").GetComponent<Transform> ();
-       rightwayPoint = GameObject.Find("RightWayPoint").GetComponent<Transform> ();
 
        healthBar.SetMaxHealth(maxHealth);
+       Move();
     }
 
     protected void OnCollisionEnter2D(Collision2D other) {
@@ -34,20 +29,19 @@ public class Enemy : MonoBehaviour
         }
     }
     // Update is called once per frame
-    void Update()
+    protected virtual void Update()
     {
-      //  if (walkingDirection >0 && transform.position.x > originalX + rightMax)
-      //  {
-        //    walkingDirection *= -1;
-         //   transform.localScale = new Vector3(transform.localScale.x *= -1, transform.localScale.y, transform.localScale.z);
+        Debug.Log(rb.velocity.x);
+        if (transform.position.x >= rightwayPoint.position.x){
+            movingRight = false;
+            Move();
+        }          
+        if (transform.position.x <= leftwayPoint.position.x){
+            movingRight = true;
+            Move();
+        }
 
-      //  }
-      //  if(walkingDirection < 0 && transform.position.x < originalX - leftMax)
-       // {
-        //    walkingDirection *= -1;
-         //   transform.localScale = new Vector3(transform.localScale.x *= -1, transform.localScale.y, transform.localScale.z);
-        //}
-        //transform.Translate(new Vector2(speed, 0) * walkingDirection * Time.deltaTime);
+        
     }
     public void TakeDamage (int damage)
     {
@@ -62,5 +56,13 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
+    }
+
+    protected void Move(){
+        if (movingRight){
+            rb.velocity = new Vector2 (moveSpeed, rb.velocity.y);
+        }else{
+            rb.velocity = new Vector2 (-moveSpeed, rb.velocity.y);
+        }
     }
 }
