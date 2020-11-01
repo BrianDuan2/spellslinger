@@ -40,6 +40,8 @@ public class Enemy : MonoBehaviour
                 movingRight = true;
                 Move();
             }
+        }else{
+            rb.velocity = new Vector2(0,0);
         }
 
         

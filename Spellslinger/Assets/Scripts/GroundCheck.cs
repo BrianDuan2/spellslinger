@@ -36,11 +36,11 @@ public class GroundCheck : MonoBehaviour
     {  
         if(collision.gameObject.CompareTag("Ground"))
         {
-            player.jumps = 2;
+            player.jumps = 1;
         }
         if(collision.gameObject.CompareTag("Platforms"))
         {
-            player.jumps = 2;
+            player.jumps = 1;
         }
     }
 

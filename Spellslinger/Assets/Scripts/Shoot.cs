@@ -52,10 +52,13 @@ public class Shoot : MonoBehaviour
                     Fire(); 
             }
             
-        }
+            if (equip == 3){
+                //add a cooldown
+                if (player.checkMana(40)){
+                    Wind();
+                }
+            }
 
-        if (Input.GetButtonDown("Fire1"))
-        {
             if (equip == 4){
                 if (player.checkMana(20))
                     Ice(); 
@@ -79,6 +82,7 @@ public class Shoot : MonoBehaviour
 
                 
             }
+            /*
             if (equip == 3){
                 t += Time.deltaTime;
                 if (t >= 0.1f){
@@ -91,7 +95,7 @@ public class Shoot : MonoBehaviour
                     DespawnSprites();
                     t = 0.0f;
                 }
-            }
+            }*/
         }
 
         if (Input.GetButtonUp("Fire1")){
@@ -158,7 +162,7 @@ public class Shoot : MonoBehaviour
         mousePos = GetMouseWorldPosition();
         aimDirection = (mousePos - transform.position).normalized;
         float angle = Mathf.Atan2(aimDirection.y,aimDirection.x)* Mathf.Rad2Deg;
-        Vector2 propelForce = new Vector2(-0.2f,0);
+        Vector2 propelForce = new Vector2(-15f,0);
         propelForce = Rotate(propelForce, angle);
         rb.AddForce(propelForce,ForceMode2D.Impulse);
     }

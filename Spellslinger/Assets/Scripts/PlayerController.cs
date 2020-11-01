@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public HealthBar healthBar;
     public HealthBar manaBar;
-    public float jumps = 2;
+    public float jumps = 1;
     public int damage = 10;
     private float t = 0;
     private Animator anim;
