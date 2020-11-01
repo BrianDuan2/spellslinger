@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Projectiles : MonoBehaviour
+public class EnemyProjectiles : MonoBehaviour
 {
     public float speed = 20f;
     public int damage = 20;
     public Rigidbody2D rb;
     private float t;
 
-  
-
+    
+    
     void Start()
     {
        // Vector3 aim = GetMouseWorldPosition();
@@ -31,7 +31,7 @@ public class Projectiles : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         //MOVE THIS TO FIREBALL SUBCLASS
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Enemy"))
         {
             Physics2D.IgnoreCollision(other.gameObject.GetComponent<Collider2D>(),GetComponent<Collider2D>());
         }
@@ -41,10 +41,10 @@ public class Projectiles : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.CompareTag("Player"))
         {
-            Debug.Log("hit an enemy");
-            other.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            Debug.Log("hit the player");
+            other.gameObject.GetComponent<PlayerController>().TakeDamage(damage);
             Destroy(gameObject);
         }
     }

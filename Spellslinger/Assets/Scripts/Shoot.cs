@@ -103,6 +103,7 @@ public class Shoot : MonoBehaviour
         player.useMana(10);
         if (player.checkFlip()){
             Instantiate(firePrefab, transform.position, transform.rotation);
+            //Projectiles fire = Projectiles.Create(firePrefab, transform, "Player", "Enemy");
         }else{
             Vector3 rot = transform.rotation.eulerAngles;
             rot = new Vector3(rot.x,rot.y,rot.z+180);
