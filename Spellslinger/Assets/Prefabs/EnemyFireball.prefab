@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4593007076485738626}
   - component: {fileID: 4593007076485738637}
   - component: {fileID: 6566011273532318127}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: EnemyFireball
   m_TagString: Untagged
   m_Icon: {fileID: 0}

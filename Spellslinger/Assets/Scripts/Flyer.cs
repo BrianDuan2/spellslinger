@@ -9,6 +9,7 @@ public class Flyer : Enemy
     //used for targetting the player
     public PlayerController player;
     private Vector3 aimDirection;
+    private float range = 20;
     //used to control fire rate
     
     private float fireRate = 0;
@@ -16,7 +17,9 @@ public class Flyer : Enemy
     protected override void Update()
     {
         base.Update();
-        fireRate += Time.deltaTime;
+        if (checkPlayerRange()){
+            fireRate += Time.deltaTime;
+        }
         if (fireRate >= 3.0f){
             Shoot();
             fireRate = 0;
@@ -28,6 +31,13 @@ public class Flyer : Enemy
         aimDirection = (player.transform.position - transform.position).normalized;
         float ang = Mathf.Atan2(aimDirection.y,aimDirection.x)* Mathf.Rad2Deg;
         return ang;
+    }
+
+    private bool checkPlayerRange(){
+        if (Vector3.Distance(transform.position, player.transform.position)<= range){
+            return true;
+        }
+        return false;
     }
 
     private void Shoot(){

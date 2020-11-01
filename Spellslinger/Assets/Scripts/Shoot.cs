@@ -67,10 +67,10 @@ public class Shoot : MonoBehaviour
             if (equip == 2) {
                 t += Time.deltaTime;
                 if (t >= 0.1f){
-                    player.useMana(2);
+                    player.useMana(3);
                     t = 0.0f;
                 }
-                if (player.checkMana(2)){
+                if (player.checkMana(3)){
                     Lightning();
                 }else{
                     DespawnSprites();

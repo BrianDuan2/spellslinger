@@ -31,14 +31,15 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     protected virtual void Update()
     {
-        Debug.Log(rb.velocity.x);
-        if (transform.position.x >= rightwayPoint.position.x){
-            movingRight = false;
-            Move();
-        }          
-        if (transform.position.x <= leftwayPoint.position.x){
-            movingRight = true;
-            Move();
+        if (rightwayPoint != null && leftwayPoint != null){
+            if (transform.position.x >= rightwayPoint.position.x){
+                movingRight = false;
+                Move();
+            }          
+            if (transform.position.x <= leftwayPoint.position.x){
+                movingRight = true;
+                Move();
+            }
         }
 
         

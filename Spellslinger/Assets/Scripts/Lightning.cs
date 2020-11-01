@@ -25,7 +25,7 @@ public class Lightning : MonoBehaviour
                 t+=Time.deltaTime;
                 if (t>0.1f){
                     t = 0.0f;
-                    other.gameObject.GetComponent<Enemy>().TakeDamage(2);
+                    other.gameObject.GetComponent<Enemy>().TakeDamage(5);
                 }
             }
         }

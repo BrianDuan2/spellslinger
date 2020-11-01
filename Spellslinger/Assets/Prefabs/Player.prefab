@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 1423381404}
   - component: {fileID: 1423381405}
   - component: {fileID: 439459380271551938}
+  - component: {fileID: 5346598217402739348}
   m_Layer: 0
   m_Name: Lightning
   m_TagString: Untagged
@@ -176,6 +177,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sRender: {fileID: 1423381405}
+--- !u!61 &5346598217402739348
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423381403}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 9, y: 0.6}
+    newSize: {x: 9, y: 0.6}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 9, y: 0.6}
+  m_EdgeRadius: 0
 --- !u!1 &5767257773897341061
 GameObject:
   m_ObjectHideFlags: 0
@@ -421,6 +448,7 @@ GameObject:
   - component: {fileID: 5767257774366154008}
   - component: {fileID: 5767257774366154009}
   - component: {fileID: 5767257774366154005}
+  - component: {fileID: 8270729212470086320}
   m_Layer: 12
   m_Name: Player
   m_TagString: Player
@@ -574,6 +602,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 5767257773938793593}
   player: {fileID: 5767257774366154009}
+--- !u!95 &8270729212470086320
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5767257774366154011}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7098a9f7b0338f046aaf547197e0b36d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5767257775000348334
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,8 +694,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2272981427239318263, guid: 4d2363b73bd74d448a1f5d99abce6715,
-    type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -656,7 +702,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &5767257775000348331
@@ -677,7 +723,7 @@ MonoBehaviour:
     type: 3}
   player: {fileID: 5767257774366154009}
   rb: {fileID: 5767257774366154007}
-  lightningHitBox: {fileID: 0}
+  lightningHitBox: {fileID: 5346598217402739348}
   lineRenderer: {fileID: 5767257773897341059}
   sRender: {fileID: 454722778}
   lngRender: {fileID: 1423381405}
