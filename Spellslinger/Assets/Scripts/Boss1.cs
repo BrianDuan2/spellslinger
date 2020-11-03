@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Boss1 : Flyer
 {
-    private bool active = false;
+    private bool active = true;
     public float dashTimer = 0f;
     private bool dashing = false;
 
@@ -18,14 +18,14 @@ public class Boss1 : Flyer
             if (rightwayPoint != null && leftwayPoint != null){
                 if (transform.position.x >= rightwayPoint.position.x && movingRight == true){
                     movingRight = false;
-                    rb.velocity = new Vector2(0,0);
                     dashing = false;
+                    rb.velocity = new Vector2(0,0);
                 }          
                 if (transform.position.x <= leftwayPoint.position.x && movingRight == false){
                     movingRight = true;
-                    rb.velocity = new Vector2(0,0);
                     dashing = false;
-                }
+                    rb.velocity = new Vector2(0,0);                  
+                  }
             }else{
                 rb.velocity = new Vector2(0,0);
             }

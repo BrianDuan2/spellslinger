@@ -8,7 +8,7 @@ public class BossTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other) {
         if (other.gameObject.CompareTag("Player")){
-            other.gameObject.GetComponent<Boss1>().SetActive(true);
+            boss.SetActive(true);
         }
     }
 }
