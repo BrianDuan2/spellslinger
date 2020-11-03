@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Boss1 : Flyer
 {
-    private bool active = true;
+    private bool active = false;
     public float dashTimer = 0f;
     private bool dashing = false;
+
+    public Transform upperBoundPivot;
+    public Transform lowerBoundPivot;
+    private bool movingUp = false;
     protected override void Update(){
         if (active){
             Targeting();
@@ -25,6 +29,12 @@ public class Boss1 : Flyer
             }else{
                 rb.velocity = new Vector2(0,0);
             }
+            if (transform.position.y <= lowerBoundPivot.position.y && movingUp == false){
+                movingUp = true;
+            }
+            if (transform.position.y >= upperBoundPivot.position.y && movingUp == true){
+                movingUp = false;
+            }
             if (dashing == false)
                 Roam();
         }
@@ -40,6 +50,11 @@ public class Boss1 : Flyer
 
     private void Roam(){
         dashTimer+= Time.deltaTime;
+        if (movingUp){
+            rb.velocity = new Vector2(0,3);
+        }else{
+            rb.velocity = new Vector2(0,-3);
+        }
         if (dashTimer >= 5.0f){
             dashing = true;
             dashTimer = 0.0f;
