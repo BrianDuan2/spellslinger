@@ -3,7 +3,25 @@ guid: 097d361e96f6ed640a154529f3cbe7e2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - firePrefab: {instanceID: 0}
+  - icePrefab: {instanceID: 0}
+  - player: {instanceID: 0}
+  - rb: {instanceID: 0}
+  - lightningHitBox: {instanceID: 0}
+  - sprite1: {fileID: 21300000, guid: 66ef78f229e0d104a848d75997bf7a36, type: 3}
+  - firespell: {fileID: 2246925340126601981, guid: 05664af729d97495a90740f4d42239c7,
+      type: 3}
+  - thunderspell: {fileID: 7771064140871760524, guid: cba6cf4d93ea74f4bbcc0d0bb448afba,
+      type: 3}
+  - windspell: {fileID: 6867968432384133688, guid: 478869d2e2c704ea9b4d866e7162fdba,
+      type: 3}
+  - icespell: {fileID: 8034626813130861257, guid: ae63e4bd585314fbabb0dd81e8f5d833,
+      type: 3}
+  - lineRenderer: {instanceID: 0}
+  - sRender: {instanceID: 0}
+  - lngRender: {instanceID: 0}
+  - aimTransform: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

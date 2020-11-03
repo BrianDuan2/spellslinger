@@ -17,8 +17,6 @@ public class PlayerController : MonoBehaviour
     private float t = 0;
     private Animator anim;
     private bool facingRight;
-    
-
 
     void Start()
     {

@@ -14,8 +14,6 @@ public class Shoot : MonoBehaviour
     private float t = 0;
 
 
-  
-
     //placeholder for lightning effect  
     public LineRenderer lineRenderer;
     //wind spell
