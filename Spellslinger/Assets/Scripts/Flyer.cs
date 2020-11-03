@@ -13,34 +13,38 @@ public class Flyer : Enemy
     //used to control fire rate
     
     private float fireRate = 0;
+    private float maxFireRate = 3.0f;
     // Start is called before the first frame update
     protected override void Update()
     {
         base.Update();
-        if (checkPlayerRange()){
-            fireRate += Time.deltaTime;
-        }
-        if (fireRate >= 3.0f){
-            Shoot();
-            fireRate = 0;
-        }
+        Targeting();
         
     }
 
-    private float TrackPlayer(){
+    protected void Targeting(){
+        if (checkPlayerRange()){
+            fireRate += Time.deltaTime;
+        }
+        if (fireRate >= maxFireRate){
+            Shoot();
+            fireRate = 0;
+        }
+    }
+    protected float TrackPlayer(){
         aimDirection = (player.transform.position - transform.position).normalized;
         float ang = Mathf.Atan2(aimDirection.y,aimDirection.x)* Mathf.Rad2Deg;
         return ang;
     }
 
-    private bool checkPlayerRange(){
+    protected bool checkPlayerRange(){
         if (Vector3.Distance(transform.position, player.transform.position)<= range){
             return true;
         }
         return false;
     }
 
-    private void Shoot(){
+    protected void Shoot(){
         float angle = TrackPlayer();
         Vector3 rot = transform.rotation.eulerAngles;
         rot = new Vector3(rot.x,rot.y,rot.z+angle);
