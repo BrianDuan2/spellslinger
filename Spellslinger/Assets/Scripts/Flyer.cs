@@ -22,6 +22,11 @@ public class Flyer : Enemy
         
     }
 
+    public override void Freeze(){
+        base.Freeze();
+        rb.AddForce(new Vector2(0,-5));
+    }
+
     protected void Targeting(){
         if (checkPlayerRange()){
             fireRate += Time.deltaTime;

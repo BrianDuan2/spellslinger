@@ -151,6 +151,9 @@ MonoBehaviour:
   moveSpeed: 3
   leftwayPoint: {fileID: 0}
   rightwayPoint: {fileID: 0}
+  sRender: {fileID: 6052083482287027219}
+  freezeTime: 0
+  frozen: 0
   shootPrefab: {fileID: 4593007076485738624, guid: 50aa4d6c30909194f9a061e512f95fcc,
     type: 3}
   player: {fileID: 0}

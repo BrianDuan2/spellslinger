@@ -21,6 +21,7 @@ public class Shoot : MonoBehaviour
     //wind spell
     public SpriteRenderer sRender;
     public SpriteRenderer lngRender;
+    public SpriteRenderer iceRender;
     public Transform aimTransform;
     private Vector3 aimDirection;
     private Vector3 mousePos;
@@ -117,41 +118,8 @@ public class Shoot : MonoBehaviour
 
     void Ice(){
         player.useMana(10);
-         if (player.checkFlip()){
-            Instantiate(icePrefab, transform.position, transform.rotation);
-        }else{
-            Vector3 rot = transform.rotation.eulerAngles;
-            rot = new Vector3(rot.x,rot.y,rot.z+180);
-            Instantiate(icePrefab, transform.position, Quaternion.Euler(rot));
-        }
+        iceRender.enabled = true;
     }
-    /*
-    IEnumerator Lightning(){
-        RaycastHit2D hitInfo = Physics2D.Raycast(transform.position, transform.right);
-
-        if(hitInfo)
-        {
-           Enemy enemy = hitInfo.transform.GetComponent<Enemy>();
-           if (enemy != null)
-           {
-               enemy.TakeDamage(lightningDmg);
-           }
-
-           lineRenderer.SetPosition(0, transform.position);
-           lineRenderer.SetPosition(1, hitInfo.point);
-
-        }else
-        {
-             lineRenderer.SetPosition(0,transform.position);
-             lineRenderer.SetPosition(1, transform.position + transform.right * 100);
-        }
-
-        lineRenderer.enabled = true;
-        //waits one second
-        yield return new WaitForSeconds(0.02f);
-
-        lineRenderer.enabled = false;
-    }*/
 
     void Lightning(){
         lngRender.enabled = true;
@@ -170,6 +138,7 @@ public class Shoot : MonoBehaviour
     void DespawnSprites(){
         sRender.enabled = false;
         lngRender.enabled = false;
+        iceRender.enabled = false;
     }
 
     public static Vector3 GetMouseWorldPosition(){

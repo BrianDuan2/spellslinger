@@ -152,6 +152,9 @@ MonoBehaviour:
   moveSpeed: 3
   leftwayPoint: {fileID: 0}
   rightwayPoint: {fileID: 0}
+  sRender: {fileID: 3119825136173147725}
+  freezeTime: 0
+  frozen: 0
 --- !u!95 &5148304970559751139
 Animator:
   serializedVersion: 3

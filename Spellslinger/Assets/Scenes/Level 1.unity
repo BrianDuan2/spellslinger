@@ -999,6 +999,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3119825136173147725, guid: 0adef442e71d5db4c9c39d7170e94cb6,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.9450981
+      objectReference: {fileID: 0}
+    - target: {fileID: 3119825136173147725, guid: 0adef442e71d5db4c9c39d7170e94cb6,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.95294124
+      objectReference: {fileID: 0}
+    - target: {fileID: 3119825136173147725, guid: 0adef442e71d5db4c9c39d7170e94cb6,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.9568628
+      objectReference: {fileID: 0}
     - target: {fileID: 3119825136173147726, guid: 0adef442e71d5db4c9c39d7170e94cb6,
         type: 3}
       propertyPath: leftwayPoint
@@ -1886,6 +1901,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5767257774060536675, guid: 07884013d9f8aaa4090b521c3e58381b,
+        type: 3}
+      propertyPath: plat
+      value: 
+      objectReference: {fileID: 4504954134228626978}
     - target: {fileID: 5767257774366154009, guid: 07884013d9f8aaa4090b521c3e58381b,
         type: 3}
       propertyPath: healthBar
@@ -64540,6 +64560,9 @@ MonoBehaviour:
   moveSpeed: 0
   leftwayPoint: {fileID: 1358663641}
   rightwayPoint: {fileID: 1894690483}
+  sRender: {fileID: 0}
+  freezeTime: 0
+  frozen: 0
   shootPrefab: {fileID: 3513689090642612275, guid: e205878fc9de1ad409f958820c5170ca,
     type: 3}
   player: {fileID: 2052401373}
@@ -64873,9 +64896,9 @@ PlatformEffector2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RotationalOffset: 0
-  m_UseOneWay: 1
+  m_UseOneWay: 0
   m_UseOneWayGrouping: 0
-  m_SurfaceArc: 180
+  m_SurfaceArc: 360
   m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 0
