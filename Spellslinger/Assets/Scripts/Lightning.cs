@@ -8,7 +8,7 @@ public class Lightning : MonoBehaviour
     void OnTriggerStay2D(Collider2D other) {
         if (sRender.enabled == true){
             if (other.gameObject.CompareTag("Enemy")){
-                other.gameObject.GetComponent<Enemy>().Freeze(); 
+                other.gameObject.GetComponent<Enemy>().TakeDamage(5); 
             }
         }
     }

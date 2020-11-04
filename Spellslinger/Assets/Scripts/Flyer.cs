@@ -9,7 +9,7 @@ public class Flyer : Enemy
     //used for targetting the player
     public PlayerController player;
     private Vector3 aimDirection;
-    private float range = 20;
+    private float range = 25;
     //used to control fire rate
     
     private float fireRate = 0;
@@ -24,7 +24,7 @@ public class Flyer : Enemy
 
     public override void Freeze(){
         base.Freeze();
-        rb.AddForce(new Vector2(0,-5));
+        rb.AddForce(new Vector2(0,-5),ForceMode2D.Impulse);
     }
 
     protected void Targeting(){
