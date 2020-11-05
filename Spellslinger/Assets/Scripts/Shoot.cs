@@ -133,6 +133,7 @@ public class Shoot : MonoBehaviour
         Vector2 propelForce = new Vector2(-15f,0);
         propelForce = Rotate(propelForce, angle);
         rb.AddForce(propelForce,ForceMode2D.Impulse);
+        player.useMana(40);
     }
 
     void DespawnSprites(){
