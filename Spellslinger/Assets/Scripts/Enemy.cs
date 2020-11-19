@@ -73,6 +73,8 @@ public class Enemy : MonoBehaviour
         rb.velocity = new Vector2(0,0);
         freezeTime = 5.0f;
         frozen = true;
+        gameObject.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        gameObject.transform.GetComponent<Rigidbody2D>().AddForce(new Vector2(0,-1) * 10, ForceMode2D.Impulse);
         sRender.color = Color.blue;
     }
 
@@ -81,6 +83,7 @@ public class Enemy : MonoBehaviour
         frozen = false;
         freezeTime = 0;
         sRender.color = Color.white;
+        gameObject.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
     }
     void Die()
     {
