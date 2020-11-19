@@ -5,11 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Door : TriggerZone
 {
-    
-
-    
+    public string nextLevel;
     public SpriteRenderer me;
-    private bool active = false;
+    public bool active = true;
 
     
     public void setActive(){
@@ -17,10 +15,12 @@ public class Door : TriggerZone
         me.enabled = true;
     }
     public void nextScene(){
-        SceneManager.LoadScene("Level 2");
+        SceneManager.LoadScene(nextLevel);
     }
 
     protected override void TriggerAction(){
-        nextScene();
+        if (active == true){
+            nextScene();
+        }
     }
 }

@@ -7,7 +7,7 @@ public abstract class TriggerZone : MonoBehaviour
     public bool playerInRange;
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && playerInRange)
+        if (Input.GetKey(KeyCode.F) && playerInRange)
         {
             TriggerAction();
         }
