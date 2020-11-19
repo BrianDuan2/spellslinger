@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Boss1 : Flyer
 {
-    private bool active = true;
+    private bool active = false;
     public float dashTimer = 0f;
     private bool dashing = false;
 
     public Transform upperBoundPivot;
     public Transform lowerBoundPivot;
     private bool movingUp = false;
+    public Door door;
     protected override void Update(){
         if (active){
             Targeting();
@@ -65,5 +66,10 @@ public class Boss1 : Flyer
     public void SetActive(bool tf){
         active = tf;
         return;
+    }
+
+    void Die(){
+        Destroy(gameObject);
+        door.setActive();
     }
 }
