@@ -3,7 +3,10 @@ guid: f63b20766ac2ab445bd6f3647576f6fe
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - healthBar: {instanceID: 0}
+  - manaBar: {instanceID: 0}
+  - heart: {fileID: 1056946594301692438, guid: ffb9b59602ffb4aa091b88ecfac18ece, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
