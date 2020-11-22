@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
@@ -13,6 +14,7 @@ public class PlayerController : MonoBehaviour
     public float jumpForce;
     public HealthBar healthBar;
     public HealthBar manaBar;
+    public GameObject cCount;
     public float jumps = 1;
     public int damage = 10;
     private float t = 0;
@@ -116,6 +118,7 @@ public class PlayerController : MonoBehaviour
     
     public void addCrystals(int i){
         crystals+= i;
+        cCount.GetComponent<TMPro.TextMeshProUGUI>().text = "Crystals: " + crystals.ToString();
     }
 
     public int checkCrystals(){

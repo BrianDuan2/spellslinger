@@ -18,6 +18,8 @@ public class Barrier : MonoBehaviour
                 sprite.enabled = false;
                 collider.enabled = false;
                 p.addCrystals(-req);
+            }else{
+                
             }
         }
     }
