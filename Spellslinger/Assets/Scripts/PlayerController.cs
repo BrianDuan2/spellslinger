@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private float t = 0;
     private Animator anim;
     private bool facingRight;
+    private int crystals = 0;
     
 
 
@@ -111,6 +112,13 @@ public class PlayerController : MonoBehaviour
 
     }
 
+    public void addCrystals(int i){
+        crystals+= i;
+    }
+
+    public int checkCrystals(){
+        return crystals;
+    }
     public bool checkFlip(){
         return facingRight;
     }
