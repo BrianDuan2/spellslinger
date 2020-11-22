@@ -6,7 +6,10 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
    public void PlayGame(){
-       SceneManager.LoadScene("Level 1");
+        PlayerController.health = 100;
+        PlayerController.mana = 100;
+
+        SceneManager.LoadScene("Level 1");
    }
 
    public void QuitGame(){
