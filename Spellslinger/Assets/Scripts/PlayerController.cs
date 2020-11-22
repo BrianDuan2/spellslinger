@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
 
 
     }
-
+    
     public void addCrystals(int i){
         crystals+= i;
     }
@@ -119,6 +119,7 @@ public class PlayerController : MonoBehaviour
     public int checkCrystals(){
         return crystals;
     }
+    
     private void OnCollisionEnter2D( Collision2D collision )
      {
         if (collision.gameObject.name == "Heart")
@@ -133,9 +134,11 @@ public class PlayerController : MonoBehaviour
             {
                 health += 20;
             }
+            healthBar.SetHealth(health);
             Debug.Log("health is at " + health);
         }
      }
+
     public bool checkFlip(){
         return facingRight;
     }
