@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -92,7 +93,8 @@ public class PlayerController : MonoBehaviour
     }
     void Die()
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
+        SceneManager.LoadScene("GameOver");
     }
 
     private void Flip (float horizontal){
