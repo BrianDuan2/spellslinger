@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
         health -= damage;
         healthBar.SetHealth(health);
         Debug.Log("dmg = " + damage);
-        Debug.Log("health is at" + health);
+        Debug.Log("health is at " + health);
         if (health <=0)
         {
             Die();
@@ -119,6 +119,23 @@ public class PlayerController : MonoBehaviour
     public int checkCrystals(){
         return crystals;
     }
+    private void OnCollisionEnter2D( Collision2D collision )
+     {
+        if (collision.gameObject.name == "Heart")
+        {
+            Debug.Log("Touch heart yoyoyo!!!");
+            Destroy(collision.gameObject);
+            if (health >= 80)
+            {
+                health = 100;
+            }
+            else
+            {
+                health += 20;
+            }
+            Debug.Log("health is at " + health);
+        }
+     }
     public bool checkFlip(){
         return facingRight;
     }
