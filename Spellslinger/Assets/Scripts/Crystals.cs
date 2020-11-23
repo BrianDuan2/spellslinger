@@ -9,6 +9,7 @@ public class Crystals : MonoBehaviour
         if (other.gameObject.CompareTag("Player")){
             other.gameObject.GetComponent<PlayerController>().addCrystals(1);
             Destroy(gameObject);
+            Destroy(GameObject.Find("ShowText"),5);
         }
     }
 }

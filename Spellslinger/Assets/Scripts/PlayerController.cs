@@ -129,7 +129,6 @@ public class PlayerController : MonoBehaviour
      {
         if (collision.gameObject.name == "Heart")
         {
-            Debug.Log("Touch heart yoyoyo!!!");
             Destroy(collision.gameObject);
             if (health >= 80)
             {
@@ -142,7 +141,8 @@ public class PlayerController : MonoBehaviour
             healthBar.SetHealth(health);
             Debug.Log("health is at " + health);
         }
-     }
+
+    }
 
     public bool checkFlip(){
         return facingRight;
