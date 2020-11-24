@@ -76,7 +76,6 @@ public class Shoot : MonoBehaviour
                 t += Time.deltaTime;
                 if (t >= 0.1f){
                     player.useMana(thunmana);
-                    Debug.Log(PlayerController.mana);
                     t = 0.0f;
                 }
                 if (player.checkMana(thunmana)){
