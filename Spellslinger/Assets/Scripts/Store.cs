@@ -13,12 +13,14 @@ public class Store : MonoBehaviour, IPointerEnterHandler
     public GameObject UngradedText;
     public GameObject GuideText;
     public GameObject SpellBox;
+    public GameObject ShowDoor;
 
     void Start()
     {
         ShowText.gameObject.SetActive(false);
         ConfirmText.gameObject.SetActive(false);
         UngradedText.gameObject.SetActive(false);
+        ShowDoor.gameObject.SetActive(false);
     }
 
     void Update()
@@ -68,6 +70,7 @@ public class Store : MonoBehaviour, IPointerEnterHandler
         {
             Shoot.icemana -= 2;
         }
+        ShowDoor.gameObject.SetActive(true);
     }
 
     public void OnClickNo()

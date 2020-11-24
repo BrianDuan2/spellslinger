@@ -12,18 +12,19 @@ public class Enemy : MonoBehaviour
     public Transform leftwayPoint, rightwayPoint;
     protected bool movingRight = true;
     protected Rigidbody2D rb;
-
     public SpriteRenderer sRender;
 
     public float freezeTime = 0;
     public bool frozen = false;
     private Vector2 oldVelocity;
+    Boss1 boss1;
     // Start is called before the first frame update
 
     protected void Start()
     {
-       // originalX = transform.position.x;
-       rb = GetComponent<Rigidbody2D>();
+        // originalX = transform.position.x;
+        boss1 = FindObjectOfType<Boss1>();
+        rb = GetComponent<Rigidbody2D>();
        healthBar.SetMaxHealth(maxHealth);
        Move();
     }
@@ -64,6 +65,11 @@ public class Enemy : MonoBehaviour
         Debug.Log("health is at" + health);
         if (health <=0)
         {
+            if(gameObject.name=="Boss 1")
+            {
+                Debug.Log("Boss Died!!");
+                boss1.ShowDoor();
+            }
             Die();
         }
     }
