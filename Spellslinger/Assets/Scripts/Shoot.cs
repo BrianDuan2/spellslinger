@@ -14,7 +14,11 @@ public class Shoot : MonoBehaviour
     private float t = 0;
 
 
-  
+    static public int firemana = 10;
+    static public int thunmana = 3;
+    static public int windmana = 40;
+    static public int icemana = 10;
+
 
     //placeholder for lightning effect  
     public LineRenderer lineRenderer;
@@ -49,19 +53,19 @@ public class Shoot : MonoBehaviour
         if (Input.GetButtonDown("Fire1"))
         {
             if (equip == 1){
-                if (player.checkMana(20))
+                if (player.checkMana(firemana))
                     Fire(); 
             }
             
             if (equip == 3){
                 //add a cooldown
-                if (player.checkMana(40)){
+                if (player.checkMana(windmana)){
                     Wind();
                 }
             }
 
             if (equip == 4){
-                if (player.checkMana(20))
+                if (player.checkMana(icemana))
                     Ice(); 
             }
             
@@ -71,10 +75,11 @@ public class Shoot : MonoBehaviour
             if (equip == 2) {
                 t += Time.deltaTime;
                 if (t >= 0.1f){
-                    player.useMana(3);
+                    player.useMana(thunmana);
+                    Debug.Log(PlayerController.mana);
                     t = 0.0f;
                 }
-                if (player.checkMana(3)){
+                if (player.checkMana(thunmana)){
                     Lightning();
                 }else{
                     DespawnSprites();
@@ -105,7 +110,7 @@ public class Shoot : MonoBehaviour
         }
     }
     void Fire(){
-        player.useMana(10);
+        player.useMana(firemana);
         if (player.checkFlip()){
             Instantiate(firePrefab, transform.position, transform.rotation);
             //Projectiles fire = Projectiles.Create(firePrefab, transform, "Player", "Enemy");
@@ -117,7 +122,7 @@ public class Shoot : MonoBehaviour
     }
 
     void Ice(){
-        player.useMana(10);
+        player.useMana(icemana);
         iceRender.enabled = true;
     }
 
@@ -133,7 +138,7 @@ public class Shoot : MonoBehaviour
         Vector2 propelForce = new Vector2(-15f,0);
         propelForce = Rotate(propelForce, angle);
         rb.AddForce(propelForce,ForceMode2D.Impulse);
-        player.useMana(40);
+        player.useMana(windmana);
     }
 
     void DespawnSprites(){
