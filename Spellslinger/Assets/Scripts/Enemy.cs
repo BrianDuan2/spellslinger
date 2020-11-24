@@ -67,7 +67,6 @@ public class Enemy : MonoBehaviour
         {
             if(gameObject.name=="Boss 1")
             {
-                Debug.Log("Boss Died!!");
                 boss1.ShowDoor();
             }
             Die();
