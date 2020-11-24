@@ -123,6 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerInRange: 0
+  door: {fileID: 0}
   nextLevel: 
   me: {fileID: 3624787956664803583}
-  active: 1
+  active: 0
+  doortip: {fileID: 0}

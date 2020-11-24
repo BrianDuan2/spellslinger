@@ -11,7 +11,7 @@ public class Boss1 : Flyer
     public Transform upperBoundPivot;
     public Transform lowerBoundPivot;
     private bool movingUp = false;
-    public GameObject showdoor;
+    public Door door;
     protected override void Update() {
         if (active) {
             Targeting();
@@ -68,7 +68,7 @@ public class Boss1 : Flyer
         return;
     }
     public void ShowDoor()
-        {
-            showdoor.gameObject.SetActive(true);
-        }
+    {
+        door.setActive();
+    }
 }

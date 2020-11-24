@@ -7,7 +7,7 @@ public class Door : TriggerZone
 {
     public string nextLevel;
     public SpriteRenderer me;
-    public bool active = true;
+    public bool active = false;
     public GameObject doortip;
 
     
@@ -26,10 +26,14 @@ public class Door : TriggerZone
     }
     protected override void EnableTip()
     {
-        doortip.gameObject.SetActive(true);
+        if (active == true){
+            doortip.gameObject.SetActive(true);
+        }
     }
     protected override void DisableTip()
     {
-        doortip.gameObject.SetActive(false);
+        if (active == true){
+            doortip.gameObject.SetActive(false);
+        }
     }
 }

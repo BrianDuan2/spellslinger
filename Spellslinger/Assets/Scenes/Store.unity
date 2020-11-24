@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 11987192}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -64.63629, y: 2.4415894, z: -5657.219}
+  m_LocalPosition: {x: -64.63629, y: 250, z: -5657.219}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 839883747}
@@ -818,6 +818,11 @@ PrefabInstance:
       propertyPath: doortip
       value: 
       objectReference: {fileID: 965105871}
+    - target: {fileID: 3624787956664803569, guid: 7c66acedf76eba949a71bae7ad4c52fe,
+        type: 3}
+      propertyPath: active
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3624787956664803582, guid: 7c66acedf76eba949a71bae7ad4c52fe,
         type: 3}
       propertyPath: m_Name
@@ -1405,7 +1410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.59, y: 0.20000029}
+  m_AnchoredPosition: {x: -2.96, y: 0.20000029}
   m_SizeDelta: {x: 1116.7107, y: 135.46407}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &546337724
@@ -1429,18 +1434,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8a2b9e2a607dd2143b58c44bc32410b4, type: 3}
-    m_FontSize: 150
+    m_FontSize: 200
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 150
-    m_Alignment: 0
+    m_MaxSize: 200
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Decrease 1 mana cost per 0.1s
+  m_Text: "Decrease mana cost \nby 1 per 0.1s"
 --- !u!222 &546337725
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2648,7 +2653,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: As a reward of killing the boss, you can Click on one ability and upgrade
+  m_Text: As a reward for killing the boss, you can Click on one ability and upgrade
     it
 --- !u!222 &839883749
 CanvasRenderer:
@@ -3763,7 +3768,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.65, y: 0.20000029}
+  m_AnchoredPosition: {x: -3.15, y: 0.20000029}
   m_SizeDelta: {x: 1116.7107, y: 135.46407}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1193074311
@@ -3787,18 +3792,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8a2b9e2a607dd2143b58c44bc32410b4, type: 3}
-    m_FontSize: 150
+    m_FontSize: 200
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 150
-    m_Alignment: 0
+    m_MaxSize: 200
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Decrease 2 mana cost per shoot
+  m_Text: "Decrease mana cost \nby 2 per shot"
 --- !u!222 &1193074312
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4297,7 +4302,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.73, y: 0.20000029}
+  m_AnchoredPosition: {x: -3.1, y: 0.20000029}
   m_SizeDelta: {x: 1116.7107, y: 135.46407}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1493566640
@@ -4321,18 +4326,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8a2b9e2a607dd2143b58c44bc32410b4, type: 3}
-    m_FontSize: 150
+    m_FontSize: 200
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 150
-    m_Alignment: 0
+    m_MaxSize: 200
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Decrease 10 mana cost per shoot
+  m_Text: "Decrease mana cost \nby 10 per cast"
 --- !u!222 &1493566641
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5459,7 +5464,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.64, y: 0.20000029}
+  m_AnchoredPosition: {x: -3.01, y: 0.20000029}
   m_SizeDelta: {x: 1116.7107, y: 135.46407}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1877392109
@@ -5483,18 +5488,18 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8a2b9e2a607dd2143b58c44bc32410b4, type: 3}
-    m_FontSize: 150
+    m_FontSize: 200
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
-    m_MaxSize: 150
-    m_Alignment: 0
+    m_MinSize: 0
+    m_MaxSize: 250
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: Decrease 2 mana cost per shoot
+  m_Text: "Decrease mana cost \nby 2 per shot"
 --- !u!222 &1877392110
 CanvasRenderer:
   m_ObjectHideFlags: 0
