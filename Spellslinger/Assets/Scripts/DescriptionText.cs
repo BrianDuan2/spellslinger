@@ -41,7 +41,7 @@ public class DescriptionText : MonoBehaviour
         {
             text3.gameObject.SetActive(true);
         }
-        if (transform.position.x > 105)
+        if (transform.position.x > 107.2)
         {
             text3.gameObject.SetActive(false);
         }

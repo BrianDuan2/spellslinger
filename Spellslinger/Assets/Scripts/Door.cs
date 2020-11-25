@@ -9,18 +9,58 @@ public class Door : TriggerZone
     public SpriteRenderer me;
     public bool active = false;
     public GameObject doortip;
+    public string CurrentScene;
+    public string LastScene;
+    public string NextScene;
 
-    
     public void setActive(){
         active = true;
         me.enabled = true;
     }
-    public void nextScene(){
-        SceneManager.LoadScene(nextLevel);
+
+    public void nextScene()
+    {
+        CurrentScene = SceneManager.GetActiveScene().name;
+
+        if (CurrentScene == "Store")
+        {
+            LastScene = LevelManager.getLastLevel();
+            if (LastScene == "Level 1")
+            {
+                NextScene = "Level 2";
+            }
+            else if (LastScene == "Level 2")
+            {
+                NextScene = "Level 3";
+            }
+        }
+        else
+        {
+            NextScene = "Store";
+            LevelManager.setLastLevel(CurrentScene);
+        }
+        SceneManager.LoadScene(NextScene);
+
+
+    }
+    public static class LevelManager
+    {
+        private static string lastLevel;
+
+        public static void setLastLevel(string level)
+        {
+            lastLevel = level;
+        }
+
+        public static string getLastLevel()
+        {
+            return lastLevel;
+        }
     }
 
     protected override void TriggerAction(){
-        if (active == true){
+        if (active == true)
+        {
             nextScene();
         }
     }
