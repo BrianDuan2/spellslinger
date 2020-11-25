@@ -65411,6 +65411,11 @@ PrefabInstance:
       propertyPath: door
       value: 
       objectReference: {fileID: 1069239843}
+    - target: {fileID: 633108413194780873, guid: b3b465fc9386dcb42a312ddbdc87dd9e,
+        type: 3}
+      propertyPath: health
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 2123977719392112312, guid: b3b465fc9386dcb42a312ddbdc87dd9e,
         type: 3}
       propertyPath: m_AnchorMax.x
