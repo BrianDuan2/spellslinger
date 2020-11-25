@@ -33,6 +33,8 @@ public class Door : TriggerZone
             {
                 NextScene = "Level 3";
             }
+            PlayerController.health = 100;
+            PlayerController.mana = 100;
         }
         else
         {
