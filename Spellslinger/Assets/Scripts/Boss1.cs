@@ -6,12 +6,23 @@ public class Boss1 : Flyer
 {
     private bool active = false;
     public float dashTimer = 0f;
+    public float dashFreq = 5.0f;
     private bool dashing = false;
     public bool final = false;
     public Transform upperBoundPivot;
     public Transform lowerBoundPivot;
     private bool movingUp = false;
     public Door door;
+
+    public LightningSpawner l0;
+    public LightningSpawner l1;
+    public LightningSpawner l2;
+    public LightningSpawner l3;
+    public LightningSpawner l4;
+
+    private float lTimer = 0f;
+    private int pick;
+
     protected override void Update() {
         if (active) {
             Targeting();
@@ -38,6 +49,33 @@ public class Boss1 : Flyer
             }
             if (dashing == false)
                 Roam();
+
+            if (final == true){
+            //Set lightning spawns on a timer for final boss
+                lTimer += Time.deltaTime;
+                if (lTimer >= 2.0f){
+                    pick = Random.Range(0,5);
+                    switch(pick)
+                    {
+                        case 0:
+                            Lightning(l0);
+                        break;
+                        case 1:
+                            Lightning(l1);
+                        break;
+                        case 2:
+                            Lightning(l2);
+                        break;
+                        case 3:
+                            Lightning(l3);
+                        break;
+                        case 4:
+                            Lightning(l4);
+                        break;
+                    }
+                    lTimer = 0.0f;
+                }
+            }
         }
     }
 
@@ -56,7 +94,7 @@ public class Boss1 : Flyer
         } else {
             rb.velocity = new Vector2(0, -3);
         }
-        if (dashTimer >= 5.0f) {
+        if (dashTimer >= dashFreq) {
             dashing = true;
             dashTimer = 0.0f;
             Dash();
@@ -64,9 +102,10 @@ public class Boss1 : Flyer
         return;
     }
 
-    private void Rain(){
-        
+    private void Lightning(LightningSpawner l){
+        l.SpawnL();
     }
+
     public void SetActive(bool tf) {
         active = tf;
         return;
