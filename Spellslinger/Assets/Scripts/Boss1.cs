@@ -7,7 +7,7 @@ public class Boss1 : Flyer
     private bool active = false;
     public float dashTimer = 0f;
     private bool dashing = false;
-
+    public bool final = false;
     public Transform upperBoundPivot;
     public Transform lowerBoundPivot;
     private bool movingUp = false;
@@ -62,6 +62,10 @@ public class Boss1 : Flyer
             Dash();
         }
         return;
+    }
+
+    private void Rain(){
+        
     }
     public void SetActive(bool tf) {
         active = tf;
