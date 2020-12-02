@@ -21,7 +21,9 @@ public class Menu : MonoBehaviour
 
    public void Continue(){
        int i = LevelManager.getProgress();
-       switch(i){
+        PlayerController.health = 100;
+        PlayerController.mana = 100;
+        switch (i){
             case(1):
                 SceneManager.LoadScene("Level 1");
             break;
