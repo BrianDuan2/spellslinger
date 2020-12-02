@@ -39,6 +39,10 @@ public class Door : TriggerZone
                 NextScene = "Level 4";
                 LevelManager.setProgress(4);
             }
+            else if (LastScene == "Level 3")
+            {
+                NextScene = "Level 4";
+            }
             PlayerController.health = 100;
             PlayerController.mana = 100;
         }
