@@ -102,6 +102,10 @@ public class PlayerController : MonoBehaviour
     void Die()
     {
         //Destroy(gameObject);
+        Shoot.firemana = 10;
+        Shoot.thunmana = 3;
+        Shoot.windmana = 40;
+        Shoot.icemana = 10;
         SceneManager.LoadScene("GameOver");
     }
 
