@@ -410,7 +410,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 2.999702, y: 238.5}
-  m_SizeDelta: {x: 1329.287, y: 773.79517}
+  m_SizeDelta: {x: 850, y: 773.79517}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &122498568
 MonoBehaviour:
@@ -499,7 +499,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6981132, g: 0.677666, b: 0.6618903, a: 1}
+  m_Color: {r: 0.6613193, g: 0.7264151, b: 0.6544589, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -583,10 +583,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
+    m_HighlightedColor: {r: 0.70387924, g: 0.754717, b: 0.66571736, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.6753125, g: 0.6981132, b: 0.66847634, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -699,15 +699,15 @@ RectTransform:
   m_GameObject: {fileID: 539373819}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 208755074}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.19999695, y: -1.2856007}
+  m_SizeDelta: {x: 1761.0107, y: 289.2885}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &539373821
 MonoBehaviour:
@@ -730,11 +730,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8a2b9e2a607dd2143b58c44bc32410b4, type: 3}
-    m_FontSize: 20
+    m_FontSize: 150
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 150
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -962,15 +962,15 @@ RectTransform:
   m_GameObject: {fileID: 1371485170}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children: []
   m_Father: {fileID: 1404587694}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1.6717987, y: -0.70000076}
+  m_SizeDelta: {x: 1766.5646, y: 283.0643}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1371485172
 MonoBehaviour:
@@ -993,11 +993,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 8a2b9e2a607dd2143b58c44bc32410b4, type: 3}
-    m_FontSize: 20
+    m_FontSize: 150
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 150
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1173,10 +1173,10 @@ MonoBehaviour:
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_NormalColor: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 1}
+    m_HighlightedColor: {r: 0.70387924, g: 0.754717, b: 0.66571736, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 0.6753125, g: 0.6981132, b: 0.66847634, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1283,10 +1283,10 @@ MonoBehaviour:
       hopes you can stop the decay.
     - Are you ready to start your adventure?
     cutscenes:
-    - {fileID: 21300000, guid: 4bad806c3e5e156468500aec63dacb3b, type: 3}
-    - {fileID: 21300000, guid: 4eafbde14dd3a8b438be39961fdaa31a, type: 3}
-    - {fileID: 21300000, guid: 5d829182c5e106142898528af487dfe0, type: 3}
-    - {fileID: 21300000, guid: f7d80decba4ff854a81e9bfbde18852f, type: 3}
+    - {fileID: 21300000, guid: 613c0f725bde64000a3137f046682265, type: 3}
+    - {fileID: 21300000, guid: 3cd9aa95375484379ae68a176d2d8880, type: 3}
+    - {fileID: 21300000, guid: 5499ae19400f342dcac0ff01c42fbfd6, type: 3}
+    - {fileID: 21300000, guid: c4f7353b99d2f44efb287aa61c160d4c, type: 3}
   StartButton: {fileID: 1404587693}
   SkipButton: {fileID: 208755073}
 --- !u!1 &1554932829
