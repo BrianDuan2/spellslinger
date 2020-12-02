@@ -158,9 +158,16 @@ MonoBehaviour:
     type: 3}
   player: {fileID: 0}
   dashTimer: 0
+  dashFreq: 5
+  final: 0
   upperBoundPivot: {fileID: 0}
   lowerBoundPivot: {fileID: 0}
   door: {fileID: 0}
+  l0: {fileID: 0}
+  l1: {fileID: 0}
+  l2: {fileID: 0}
+  l3: {fileID: 0}
+  l4: {fileID: 0}
 --- !u!1 &3290332646258796281
 GameObject:
   m_ObjectHideFlags: 0
@@ -435,7 +442,7 @@ RectTransform:
   m_GameObject: {fileID: 6801793642455144936}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 2123977719392112312}
   - {fileID: 1867818669834225925}
