@@ -1278,9 +1278,9 @@ MonoBehaviour:
     - "The forest is getting destroyed and dark power is spreading. Since all of
       the kingdom\u2019s best men are sent to investigate and fail to come back.
       You are hired by the kingdom to investigate the destruction of the forest."
-    - As you travel deeper into the forest, you meet a dying fairy who pleads with
-      you to save their home. The fairy gifts you with the ability to use magic in
-      hopes you can stop the decay.
+    - As you travel deeper into the forest, you meet a fairy who pleads with you
+      to save their home. The fairy gifts you with the ability to use magic in hopes
+      you can stop the decay.
     - Are you ready to start your adventure?
     cutscenes:
     - {fileID: 21300000, guid: 613c0f725bde64000a3137f046682265, type: 3}
