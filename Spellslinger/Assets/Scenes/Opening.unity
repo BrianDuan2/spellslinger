@@ -295,6 +295,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1643643758}
+  - {fileID: 122498567}
   - {fileID: 1404587694}
   - {fileID: 208755074}
   - {fileID: 1055533795}
@@ -374,6 +375,80 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &122498566
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 122498567}
+  - component: {fileID: 122498569}
+  - component: {fileID: 122498568}
+  m_Layer: 5
+  m_Name: CutSceneBox
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &122498567
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122498566}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 42739064}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2.999702, y: 238.5}
+  m_SizeDelta: {x: 1329.287, y: 773.79517}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &122498568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122498566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &122498569
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122498566}
+  m_CullTransparentMesh: 0
 --- !u!1 &159733889
 GameObject:
   m_ObjectHideFlags: 0
@@ -481,7 +556,7 @@ RectTransform:
   m_Children:
   - {fileID: 539373820}
   m_Father: {fileID: 42739064}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -595,6 +670,7 @@ MonoBehaviour:
   YesButton: {fileID: 0}
   NoButton: {fileID: 0}
   ContinueButton: {fileID: 0}
+  CutSceneBox: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &539373819
 GameObject:
@@ -707,6 +783,7 @@ MonoBehaviour:
   YesButton: {fileID: 1936622860}
   NoButton: {fileID: 1799025848}
   ContinueButton: {fileID: 1376847677}
+  CutSceneBox: {fileID: 122498566}
   animator: {fileID: 1055533796}
 --- !u!4 &910497185
 Transform:
@@ -754,7 +831,7 @@ RectTransform:
   - {fileID: 1376847678}
   - {fileID: 1554932830}
   m_Father: {fileID: 42739064}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1069,7 +1146,7 @@ RectTransform:
   m_Children:
   - {fileID: 1371485171}
   m_Father: {fileID: 42739064}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1129,6 +1206,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 122498566}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1404587696
 MonoBehaviour:
@@ -1194,6 +1282,11 @@ MonoBehaviour:
       you to save their home. The fairy gifts you with the ability to use magic in
       hopes you can stop the decay.
     - Are you ready to start your adventure?
+    cutscenes:
+    - {fileID: 21300000, guid: 4bad806c3e5e156468500aec63dacb3b, type: 3}
+    - {fileID: 21300000, guid: 4eafbde14dd3a8b438be39961fdaa31a, type: 3}
+    - {fileID: 21300000, guid: 5d829182c5e106142898528af487dfe0, type: 3}
+    - {fileID: 21300000, guid: f7d80decba4ff854a81e9bfbde18852f, type: 3}
   StartButton: {fileID: 1404587693}
   SkipButton: {fileID: 208755073}
 --- !u!1 &1554932829
@@ -1409,7 +1502,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: dd428b8232ddb9a48a4f9a1a4e1eb6b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3fbdcdde820c8b74abbef85a56e98a99, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1539,7 +1632,7 @@ RectTransform:
   m_Children:
   - {fileID: 1347510893}
   m_Father: {fileID: 42739064}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1668,6 +1761,7 @@ MonoBehaviour:
   YesButton: {fileID: 0}
   NoButton: {fileID: 0}
   ContinueButton: {fileID: 0}
+  CutSceneBox: {fileID: 0}
   animator: {fileID: 0}
 --- !u!1 &1936622860
 GameObject:
@@ -1703,7 +1797,7 @@ RectTransform:
   m_Children:
   - {fileID: 1569599992}
   m_Father: {fileID: 42739064}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1817,6 +1911,7 @@ MonoBehaviour:
   YesButton: {fileID: 0}
   NoButton: {fileID: 0}
   ContinueButton: {fileID: 0}
+  CutSceneBox: {fileID: 0}
   animator: {fileID: 0}
 --- !u!114 &1936622866
 MonoBehaviour:
