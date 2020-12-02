@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6052083482287027216}
   - component: {fileID: 6052083482287027219}
   - component: {fileID: 6052083482287027218}
+  - component: {fileID: -8987789217722376799}
   m_Layer: 13
   m_Name: Flyer
   m_TagString: Enemy
@@ -157,6 +158,25 @@ MonoBehaviour:
   shootPrefab: {fileID: 4593007076485738624, guid: 50aa4d6c30909194f9a061e512f95fcc,
     type: 3}
   player: {fileID: 0}
+--- !u!95 &-8987789217722376799
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6052083482287027212}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 651637b56481b35428cf96a989d3b5bd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8547143214980862514
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +286,11 @@ PrefabInstance:
     - target: {fileID: 895168886287526134, guid: c1ecdc6d9f789a84499bef616e3f1e8b,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 895168886287526134, guid: c1ecdc6d9f789a84499bef616e3f1e8b,
+        type: 3}
+      propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1243059033170642907, guid: c1ecdc6d9f789a84499bef616e3f1e8b,
