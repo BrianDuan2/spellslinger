@@ -28,10 +28,16 @@ public class Door : TriggerZone
             if (LastScene == "Level 1")
             {
                 NextScene = "Level 2";
+                LevelManager.setProgress(2);
             }
             else if (LastScene == "Level 2")
             {
                 NextScene = "Level 3";
+                LevelManager.setProgress(3);
+            }
+            else if (LastScene == "Level 3"){
+                NextScene = "Level 4";
+                LevelManager.setProgress(4);
             }
             PlayerController.health = 100;
             PlayerController.mana = 100;
@@ -49,20 +55,7 @@ public class Door : TriggerZone
 
 
     }
-    public static class LevelManager
-    {
-        private static string lastLevel;
-
-        public static void setLastLevel(string level)
-        {
-            lastLevel = level;
-        }
-
-        public static string getLastLevel()
-        {
-            return lastLevel;
-        }
-    }
+    
 
     protected override void TriggerAction(){
         if (active == true)
@@ -83,3 +76,25 @@ public class Door : TriggerZone
         }
     }
 }
+public static class LevelManager
+    {
+        private static string lastLevel;
+        private static int progress = 1;
+
+        public static void setLastLevel(string level)
+        {
+            lastLevel = level;
+        }
+
+        public static string getLastLevel()
+        {
+            return lastLevel;
+        }
+
+        public static void setProgress(int i){
+            progress = i;
+        }
+        public static int getProgress(){
+            return progress;
+        }
+    }
