@@ -9,7 +9,7 @@ public class Menu : MonoBehaviour
         PlayerController.health = 100;
         PlayerController.mana = 100;
 
-        SceneManager.LoadScene("Level 1");
+        SceneManager.LoadScene("Opening");
    }
 
    public void QuitGame(){
