@@ -29,6 +29,11 @@ public class Shoot : MonoBehaviour
     public Transform aimTransform;
     private Vector3 aimDirection;
     private Vector3 mousePos;
+    private Animator anim;
+
+    public void Start(){
+        anim = player.GetComponent<Animator>();
+    }
     void Update()
     {
         if (Input.GetKey(KeyCode.Alpha1))
@@ -52,6 +57,7 @@ public class Shoot : MonoBehaviour
         //need to change so player can reorganize spells later
         if (Input.GetButtonDown("Fire1"))
         {
+            anim.SetBool("isCasting", true);
             if (equip == 1){
                 if (player.checkMana(firemana))
                     Fire(); 
@@ -105,6 +111,7 @@ public class Shoot : MonoBehaviour
 
         if (Input.GetButtonUp("Fire1")){
             DespawnSprites();
+            anim.SetBool("isCasting", false);
             t = 0.0f;
         }
     }

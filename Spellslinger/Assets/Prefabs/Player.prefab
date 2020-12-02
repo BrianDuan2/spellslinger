@@ -512,7 +512,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: cb5f4ad9711625344ad0587223444211, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ebaabbc77bae67c44b25015116505ffd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -731,6 +731,9 @@ MonoBehaviour:
   sRender: {fileID: 454722778}
   lngRender: {fileID: 1423381405}
   iceRender: {fileID: 1377764107170045116}
+  playerRender: {fileID: 5767257774366154006}
+  cast: {fileID: 21300000, guid: 6c1590f5d0566764aa9b977a001c5224, type: 3}
+  idle: {fileID: 21300000, guid: ebaabbc77bae67c44b25015116505ffd, type: 3}
   aimTransform: {fileID: 5767257774366154010}
 --- !u!1001 &296986200167888416
 PrefabInstance:
