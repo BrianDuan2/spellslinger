@@ -36,6 +36,10 @@ public class Door : TriggerZone
             PlayerController.health = 100;
             PlayerController.mana = 100;
         }
+        else if (CurrentScene == "Level 4")
+        {
+            NextScene = "EndScreen";
+        }
         else
         {
             NextScene = "Store";

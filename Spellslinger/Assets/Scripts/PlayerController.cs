@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
     private bool facingRight;
     private int crystals = 0;
+    public float immunityTimer = 0.0f;
     
 
 
@@ -68,19 +69,24 @@ public class PlayerController : MonoBehaviour
             this.GetComponent<Rigidbody2D>().AddForce(new Vector2(0,jumpForce),ForceMode2D.Impulse);
             jumps--;
         }
+
+        immunityTimer-= Time.deltaTime;
     }
 
     
 
      public void TakeDamage (int damage)
     {
-        health -= damage;
-        healthBar.SetHealth(health);
-        Debug.Log("dmg = " + damage);
-        Debug.Log("health is at " + health);
-        if (health <=0)
-        {
-            Die();
+        if (immunityTimer <= 0){
+            health -= damage;
+            healthBar.SetHealth(health);
+            Debug.Log("dmg = " + damage);
+            Debug.Log("health is at " + health);
+            if (health <=0)
+            {
+                Die();
+            }
+            immunityTimer = 2.0f;
         }
     }
     public bool checkMana(int cost){

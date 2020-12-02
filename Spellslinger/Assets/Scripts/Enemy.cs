@@ -65,10 +65,7 @@ public class Enemy : MonoBehaviour
         Debug.Log("health is at" + health);
         if (health <=0)
         {
-            if(gameObject.name=="Boss 1")
-            {
-                boss1.ShowDoor();
-            }
+            
             Die();
         }
     }
@@ -90,7 +87,7 @@ public class Enemy : MonoBehaviour
         sRender.color = Color.white;
         gameObject.transform.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
     }
-    void Die()
+    protected virtual void Die()
     {
         Destroy(gameObject);
     }

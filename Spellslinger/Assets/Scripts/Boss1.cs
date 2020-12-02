@@ -114,4 +114,9 @@ public class Boss1 : Flyer
     {
         door.setActive();
     }
+
+    protected override void Die(){
+        ShowDoor();
+        Destroy(gameObject);
+    }
 }
